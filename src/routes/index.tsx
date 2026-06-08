@@ -1,29 +1,239 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "OM EXPORTS | Premium Agricultural Logistics" },
+      { name: "description", content: "Exporting premium Indian agricultural products worldwide — spices, grains, oilseeds, fibers." },
+      { property: "og:title", content: "OM EXPORTS | Premium Agricultural Logistics" },
+      { property: "og:description", content: "Exporting premium Indian agricultural products worldwide." },
     ],
   }),
-  component: Index,
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const products = [
+  { name: "Dry Red Chilli", sub: "Guntur Variety, High Pungency", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMPE29l5yqB-MIAYhw5SbVY35qhmW8QXPuQSMvF-2ckTEhGp3vw0Xeqg-K1zYZT-_ihO-pewQTPt8JHXlfaLew11A_aYHWnhQB_2E6X4XaCjoP5YM8Gj1BRGxVt2DUkf5CilmcytKvGzWyDOUTXayRK-umkmzsPjBGTfttVFeQ2PCuEE19fioldVSxT6nwxUFdLhXVlC78EyG5N_tXo2X9mL98jfughSGpBvnBlz-wof1_UvqKrBMrcYo9hTGRg304yE_dZfcig3s" },
+  { name: "Fresh Onion", sub: "Nashik Pink & Red Onions", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAeAwZkAQnyp3ZYG15DuTXaYfaGwlEESFIvJMzT2fLTUEO7bqTwHRGvPiV0lqyqGXEOq5mK9exTj5Fvw5hxJ315mGK3zv8TLcx1UahDenHWif5PJaeinkWvXGa2EKP5h9KBDERtb5O7ClgQpY0Vn66UwBipkVyrJLvD_6q-3QHOGdd-XGNCnUfk_fZtRQH33zRk8MBt36AK-UskuwuCuAqHRmlvyOvOCJADnNwXJ11znQfTl5wNG4YJmcLlsLXd-nIfDqOqDzmK7U8" },
+  { name: "Ground Nuts", sub: "Hand Picked Selection (HPS)", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAr5omLERNZs06Lj7s2-yYYzMt5FPF6Sc2qewoUwzkdCYEQkwf12FaSLBYDZ1sbDxZFXJRGvYu-YkjlTQxvm9Ghgl05nonCmZh5QQLiHpkeas_zajSdPdftXC5S9ZjR472dgKCsLH8Wj2T_G2c30P83EC54Sct3v50xBd3CsKYy6uWGwSUQJiY3UaAD7XkTZb8EO9-vg9r2q8XiPngubCYcPEGwtLgZOPi-swRuHJPmOvjOcplECKbTmrTmoAKPCxu6KCdffbL486Y" },
+  { name: "Sugar", sub: "S30 & M30 Grade Refined", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKsJy-a5VkAzuJwsjnv6fcapsNgwOvBtRcHlAE1On3Hw2dBwcPm3g53ZbUwbq3zBKjfqDSo1vTj43w_ndSjy32dAiyuL6Pb1pkprqWZA1NONz6aLs12JQ7C2KoSlduczt21sXmQnyo4l-BuCRw7BSm6TTCA8u2Kudh-WkToMzw7TMahUhw1J9Cu-OgboFptl8wroS3OKemKmL3gYip8ylfoxOiNtxfttEvfdMRUz8QK8QS19NSFsRi_GgV5VcnG32hz4hxR6wfVHM" },
+];
+
+const features = [
+  { icon: "verified", title: "Quality Assurance", desc: "Multi-stage testing and international certifications for every batch." },
+  { icon: "local_shipping", title: "Global Logistics", desc: "Seamless door-to-port delivery using our trusted logistics partners." },
+  { icon: "payments", title: "Competitive Pricing", desc: "Direct sourcing allows us to offer the best rates in the industry." },
+  { icon: "inventory_2", title: "Reliable Supply", desc: "Stable inventory levels to support high-volume recurring orders." },
+  { icon: "package_2", title: "Custom Packaging", desc: "Tailored packaging solutions to meet specific market regulations." },
+  { icon: "schedule", title: "Timely Delivery", desc: "Optimized routes ensure your goods arrive exactly when needed." },
+];
+
+function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="bg-surface grain-bg text-on-surface overflow-x-hidden">
+      <SiteHeader />
+
+      {/* Hero */}
+      <section className="relative h-screen w-full flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            className="w-full h-full object-cover"
+            alt="Cargo container ship at golden hour"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS-6yUMEtF2VWom20ER8YziTAgu8MlS2qSLy3owBDWD4lmHAOB2g-84_t2JmpH__-CwXYJrcz6SXdCVI_O2ryJAxUs1xvgreeGCmj7xLONpN0BAdonSQIGrXR_UJrcVaACcF05PyDvzpnf_YYLwFZHGtVWcznZinhFx9dcAOEGKpha72EcfmPgZsjGdQ3AIL3iLA1hrwo7RT_zadZNtaN3INCRu_OmB9fhWwYBAQx6hKJBU0zMUxK78SKccoOJEst0I31PFQeRMGw"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-white">
+          <div className="max-w-3xl">
+            <h1 className="font-display text-display-xl mb-6 text-shadow-sm leading-tight">
+              Exporting Premium Indian Agricultural Products <span className="text-gold-accent">Worldwide</span>
+            </h1>
+            <p className="font-body-rt text-lg mb-10 opacity-90 max-w-xl leading-relaxed">
+              Bridging the gap between Indian farmers and global markets with enterprise-level logistics and uncompromised quality.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="bg-gold-accent text-primary px-8 py-4 font-button-text rounded shadow-xl hover:bg-white transition-all transform hover:-translate-y-1">
+                Request Quote
+              </Link>
+              <Link to="/products" className="border border-white/50 backdrop-blur-md text-white px-8 py-4 font-button-text rounded hover:bg-white/10 transition-all">
+                Explore Products
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-3xl">expand_more</span>
+        </div>
+      </section>
+
+      {/* Heritage */}
+      <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+        <div className="grid md:grid-cols-2 gap-gutter items-center">
+          <div className="relative">
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold-accent" />
+            <img
+              className="w-full h-[500px] object-cover rounded shadow-2xl"
+              alt="Indian spices"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm_XtlH6ijaSFf-8YcKRKHiCCQn02ng_vI7qJCOgL5DPWmZBIDxQOOnJTPG2m2yhUc693w0I8zSSkGKB1-kqKNLCkMXiEfGYxd7DcnkJnZiLo6DXj9J8SOsRGOtVSZvebGFPxNESBtioCdmuM61J-RemlNQL0I6ooijrOdhb71yFEaLso89yt99MdjygJR1PTNp_GzGk5oAGgQAZikQ-h1MiJwlNChSYyNXniv6vb5_mse_Yx7ysxjBdtue7BG-h9vNyZ34HH9xiM"
+            />
+          </div>
+          <div className="md:pl-12">
+            <span className="text-gold-accent font-label-sm uppercase tracking-widest block mb-4">Our Heritage</span>
+            <h2 className="font-display text-headline-lg text-primary mb-6">Redefining the Standard of Quality</h2>
+            <p className="text-on-surface-variant font-body-rt leading-relaxed mb-8">
+              Since our inception, OM EXPORTS has been at the forefront of the agricultural export industry. We combine decades of traditional sourcing expertise with modern supply chain technology to ensure that the essence of Indian soil reaches dinner tables around the world.
+            </p>
+            <div className="flex items-center gap-4 text-primary font-subheading-md">
+              <div className="h-px w-12 bg-gold-accent" />
+              <span>Global Reliability, Artisanal Scale</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-primary py-24">
+        <div className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { v: "50+", k: "Countries Served" },
+            { v: "15+", k: "Products Exported" },
+            { v: "25+", k: "Years Experience" },
+            { v: "500+", k: "Global Clients" },
+          ].map((s) => (
+            <div key={s.k}>
+              <div className="font-display text-4xl text-secondary-fixed mb-2">{s.v}</div>
+              <div className="text-on-primary-container font-label-sm uppercase">{s.k}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-headline-lg text-primary mb-4">Premium Product Showcase</h2>
+          <div className="w-20 h-1 bg-gold-accent mx-auto" />
+        </div>
+        <div className="grid md:grid-cols-4 gap-gutter">
+          {products.map((p) => (
+            <div key={p.name} className="group relative bg-white border border-outline-variant/30 rounded shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="aspect-square overflow-hidden">
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={p.name} src={p.img} />
+              </div>
+              <div className="p-6">
+                <h3 className="font-subheading-md text-primary mb-2">{p.name}</h3>
+                <p className="text-on-surface-variant text-sm mb-4">{p.sub}</p>
+                <Link to="/products" className="text-gold-accent font-button-text flex items-center gap-2 group-hover:gap-4 transition-all">
+                  Learn More <span className="material-symbols-outlined">arrow_right_alt</span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Global Presence */}
+      <section className="bg-primary-container py-section-gap relative overflow-hidden">
+        <div className="px-margin-desktop max-w-container-max mx-auto relative z-10 grid lg:grid-cols-2 gap-gutter items-center">
+          <div>
+            <span className="text-gold-accent font-label-sm uppercase tracking-widest block mb-4">Our Reach</span>
+            <h2 className="font-display text-headline-lg text-white mb-6">Connecting India to the World</h2>
+            <p className="text-on-primary-container font-body-rt leading-relaxed mb-8">
+              Our logistics network operates with surgical precision, ensuring timely delivery to key international hubs. From the spice markets of India to the retail shelves of Vietnam and South Africa, we manage the entire journey.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 text-white"><span className="material-symbols-outlined text-gold-accent">location_on</span><span>Mumbai Port Hub</span></div>
+              <div className="flex items-center gap-4 text-white"><span className="material-symbols-outlined text-gold-accent">location_on</span><span>Chennai Integrated Logistics</span></div>
+            </div>
+          </div>
+          <div className="relative h-[400px]">
+            <div className="absolute inset-0 flex items-center justify-center opacity-40">
+              <span className="material-symbols-outlined text-[200px] text-on-primary-container">public</span>
+            </div>
+            <svg className="absolute inset-0 w-full h-full" fill="none" viewBox="0 0 800 400">
+              <path className="shipping-line" d="M200 150 Q 300 100 450 180" stroke="#D9A441" strokeLinecap="round" strokeWidth="2" />
+              <path className="shipping-line" d="M200 150 Q 150 250 100 300" stroke="#D9A441" strokeLinecap="round" strokeWidth="2" style={{ animationDelay: "1s" }} />
+              <path className="shipping-line" d="M200 150 Q 400 300 550 350" stroke="#D9A441" strokeLinecap="round" strokeWidth="2" style={{ animationDelay: "2s" }} />
+              <circle cx="200" cy="150" fill="#D9A441" r="5" />
+              <circle cx="450" cy="180" fill="white" r="3" />
+              <circle cx="100" cy="300" fill="white" r="3" />
+              <circle cx="550" cy="350" fill="white" r="3" />
+            </svg>
+          </div>
+        </div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-fixed/5 blur-[120px] rounded-full" />
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-headline-lg text-primary mb-4">Commitment to Excellence</h2>
+          <div className="w-20 h-1 bg-gold-accent mx-auto" />
+        </div>
+        <div className="grid md:grid-cols-3 gap-y-12 gap-x-gutter">
+          {features.map((f) => (
+            <div key={f.title} className="flex gap-6 group">
+              <div className="w-14 h-14 shrink-0 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-gold-accent group-hover:text-white transition-all duration-300">
+                <span className="material-symbols-outlined text-3xl">{f.icon}</span>
+              </div>
+              <div>
+                <h3 className="font-subheading-md text-primary mb-2">{f.title}</h3>
+                <p className="text-on-surface-variant text-sm leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-section-gap bg-surface-container-low">
+        <div className="px-margin-desktop max-w-container-max mx-auto">
+          <div className="mb-16">
+            <h2 className="font-display text-headline-lg text-primary text-center">Our Export Process</h2>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+            <div className="absolute top-8 md:top-1/2 left-0 w-full h-px bg-outline-variant/30 hidden md:block -translate-y-1/2" />
+            {[
+              { n: 1, t: "Ethical Sourcing", d: "Procured directly from audited farms across India.", fill: true },
+              { n: 2, t: "Quality Check", d: "Rigorous laboratory testing and cleaning processes.", fill: false },
+              { n: 3, t: "Premium Packing", d: "Secure, moisture-resistant industrial packaging.", fill: false },
+              { n: 4, t: "Global Shipping", d: "Fast transit with real-time tracking updates.", fill: true },
+            ].map((s) => (
+              <div key={s.n} className="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold mb-4 shadow-lg ${s.fill ? "bg-primary text-white" : "bg-white border-2 border-primary text-primary"}`}>{s.n}</div>
+                <h4 className="font-subheading-md text-sm mb-2">{s.t}</h4>
+                <p className="text-xs text-on-surface-variant">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img className="w-full h-full object-cover" alt="Shipping terminal at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmArGSodJ56ETdN5CS8VAc9a-CcBpbMWblIu1rcdFAsaa76ITaeAScy_YCWZ5mR9WbFyYA9AqkL3QhPiVpwhOkjQvPKtRQasdbhV7rS9Pw8buOfHpWsAMp9vqJ1WRkqMX6xt05PbyTnBB-DXHx3teBGiiscbLN2H-qVG1nmz7zeseC4Odm8W5vS3X3yqNXWwC2pdGJsNPz14F3CxI-N_W2Z_4mVpYBMPYnDjIiVbOEAx0cCwGAl9Uo9qkq64Tnxd2wjfNk8j4hmlI" />
+          <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
+        </div>
+        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center">
+          <h2 className="font-display text-4xl md:text-5xl text-white mb-8">Ready to Scale Your Sourcing?</h2>
+          <p className="text-on-primary-container text-lg max-w-2xl mx-auto mb-12">
+            Connect with our trade experts today to discuss custom requirements, bulk pricing, and international logistics solutions.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center gap-6">
+            <Link to="/contact" className="bg-gold-accent text-primary px-10 py-5 font-button-text rounded-lg hover:scale-105 transition-all shadow-2xl">
+              Get a Custom Quote
+            </Link>
+            <Link to="/contact" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 font-button-text rounded-lg hover:bg-white/20 transition-all">
+              Contact Sales
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
     </div>
   );
 }
