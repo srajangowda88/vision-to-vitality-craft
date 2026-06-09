@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AnimatedSection } from "@/components/animations/AnimatedSection";
+import { StaggerGrid, StaggerItem } from "@/components/animations/StaggerGrid";
+import { CountUp } from "@/components/animations/CountUp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,6 +34,29 @@ const features = [
   { icon: "schedule", title: "Timely Delivery", desc: "Optimized routes ensure your goods arrive exactly when needed." },
 ];
 
+const stats = [
+  { v: 50, suffix: "+", k: "Countries Served" },
+  { v: 15, suffix: "+", k: "Products Exported" },
+  { v: 25, suffix: "+", k: "Years Experience" },
+  { v: 500, suffix: "+", k: "Global Clients" },
+];
+
+const heroVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+  },
+} as const;
+
+const heroItem = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8 },
+  },
+};
+
 function HomePage() {
   return (
     <div className="bg-surface grain-bg text-on-surface overflow-x-hidden">
@@ -45,41 +72,51 @@ function HomePage() {
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
-        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-white">
+        <motion.div
+          className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-white"
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="max-w-3xl">
-            <h1 className="font-display text-display-xl mb-6 text-shadow-sm leading-tight">
+            <motion.h1 variants={heroItem} className="font-display text-display-xl mb-6 text-shadow-sm leading-tight">
               Exporting Premium Indian Agricultural Products <span className="text-gold-accent">Worldwide</span>
-            </h1>
-            <p className="font-body-rt text-lg mb-10 opacity-90 max-w-xl leading-relaxed">
+            </motion.h1>
+            <motion.p variants={heroItem} className="font-body-rt text-lg mb-10 opacity-90 max-w-xl leading-relaxed">
               Bridging the gap between Indian farmers and global markets with enterprise-level logistics and uncompromised quality.
-            </p>
-            <div className="flex flex-wrap gap-4">
+            </motion.p>
+            <motion.div variants={heroItem} className="flex flex-wrap gap-4">
               <Link to="/contact" className="bg-gold-accent text-primary px-8 py-4 font-button-text rounded shadow-xl hover:bg-white transition-all transform hover:-translate-y-1">
                 Request Quote
               </Link>
               <Link to="/products" className="border border-white/50 backdrop-blur-md text-white px-8 py-4 font-button-text rounded hover:bg-white/10 transition-all">
                 Explore Products
               </Link>
-            </div>
+            </motion.div>
           </div>
-        </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+        >
           <span className="material-symbols-outlined text-white text-3xl">expand_more</span>
-        </div>
+        </motion.div>
       </section>
 
       {/* Heritage */}
       <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
         <div className="grid md:grid-cols-2 gap-gutter items-center">
-          <div className="relative">
+          <AnimatedSection direction="left" className="relative">
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold-accent" />
             <img
               className="w-full h-[500px] object-cover rounded shadow-2xl"
               alt="Indian spices"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm_XtlH6ijaSFf-8YcKRKHiCCQn02ng_vI7qJCOgL5DPWmZBIDxQOOnJTPG2m2yhUc693w0I8zSSkGKB1-kqKNLCkMXiEfGYxd7DcnkJnZiLo6DXj9J8SOsRGOtVSZvebGFPxNESBtioCdmuM61J-RemlNQL0I6ooijrOdhb71yFEaLso89yt99MdjygJR1PTNp_GzGk5oAGgQAZikQ-h1MiJwlNChSYyNXniv6vb5_mse_Yx7ysxjBdtue7BG-h9vNyZ34HH9xiM"
             />
-          </div>
-          <div className="md:pl-12">
+          </AnimatedSection>
+          <AnimatedSection direction="right" delay={0.15} className="md:pl-12">
             <span className="text-gold-accent font-label-sm uppercase tracking-widest block mb-4">Our Heritage</span>
             <h2 className="font-display text-headline-lg text-primary mb-6">Redefining the Standard of Quality</h2>
             <p className="text-on-surface-variant font-body-rt leading-relaxed mb-8">
@@ -89,55 +126,54 @@ function HomePage() {
               <div className="h-px w-12 bg-gold-accent" />
               <span>Global Reliability, Artisanal Scale</span>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Stats */}
       <section className="bg-primary py-24">
-        <div className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { v: "50+", k: "Countries Served" },
-            { v: "15+", k: "Products Exported" },
-            { v: "25+", k: "Years Experience" },
-            { v: "500+", k: "Global Clients" },
-          ].map((s) => (
-            <div key={s.k}>
-              <div className="font-display text-4xl text-secondary-fixed mb-2">{s.v}</div>
+        <StaggerGrid className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center" staggerDelay={0.15}>
+          {stats.map((s) => (
+            <StaggerItem key={s.k}>
+              <div className="font-display text-4xl text-secondary-fixed mb-2">
+                <CountUp value={s.v} suffix={s.suffix} />
+              </div>
               <div className="text-on-primary-container font-label-sm uppercase">{s.k}</div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </section>
 
       {/* Featured Products */}
       <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
-        <div className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <h2 className="font-display text-headline-lg text-primary mb-4">Premium Product Showcase</h2>
           <div className="w-20 h-1 bg-gold-accent mx-auto" />
-        </div>
-        <div className="grid md:grid-cols-4 gap-gutter">
+        </AnimatedSection>
+        <StaggerGrid className="grid md:grid-cols-4 gap-gutter" staggerDelay={0.1}>
           {products.map((p) => (
-            <div key={p.name} className="group relative bg-white border border-outline-variant/30 rounded shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="aspect-square overflow-hidden">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={p.name} src={p.img} />
+            <StaggerItem key={p.name}>
+              <div className="group relative bg-white border border-outline-variant/30 rounded shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={p.name} src={p.img} />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-subheading-md text-primary mb-2">{p.name}</h3>
+                  <p className="text-on-surface-variant text-sm mb-4">{p.sub}</p>
+                  <Link to="/products" className="text-gold-accent font-button-text flex items-center gap-2 group-hover:gap-4 transition-all">
+                    Learn More <span className="material-symbols-outlined">arrow_right_alt</span>
+                  </Link>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-subheading-md text-primary mb-2">{p.name}</h3>
-                <p className="text-on-surface-variant text-sm mb-4">{p.sub}</p>
-                <Link to="/products" className="text-gold-accent font-button-text flex items-center gap-2 group-hover:gap-4 transition-all">
-                  Learn More <span className="material-symbols-outlined">arrow_right_alt</span>
-                </Link>
-              </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </section>
 
       {/* Global Presence */}
       <section className="bg-primary-container py-section-gap relative overflow-hidden">
         <div className="px-margin-desktop max-w-container-max mx-auto relative z-10 grid lg:grid-cols-2 gap-gutter items-center">
-          <div>
+          <AnimatedSection direction="left">
             <span className="text-gold-accent font-label-sm uppercase tracking-widest block mb-4">Our Reach</span>
             <h2 className="font-display text-headline-lg text-white mb-6">Connecting India to the World</h2>
             <p className="text-on-primary-container font-body-rt leading-relaxed mb-8">
@@ -147,8 +183,8 @@ function HomePage() {
               <div className="flex items-center gap-4 text-white"><span className="material-symbols-outlined text-gold-accent">location_on</span><span>Mumbai Port Hub</span></div>
               <div className="flex items-center gap-4 text-white"><span className="material-symbols-outlined text-gold-accent">location_on</span><span>Chennai Integrated Logistics</span></div>
             </div>
-          </div>
-          <div className="relative h-[400px]">
+          </AnimatedSection>
+          <AnimatedSection direction="right" delay={0.2} className="relative h-[400px]">
             <div className="absolute inset-0 flex items-center justify-center opacity-40">
               <span className="material-symbols-outlined text-[200px] text-on-primary-container">public</span>
             </div>
@@ -161,39 +197,41 @@ function HomePage() {
               <circle cx="100" cy="300" fill="white" r="3" />
               <circle cx="550" cy="350" fill="white" r="3" />
             </svg>
-          </div>
+          </AnimatedSection>
         </div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-fixed/5 blur-[120px] rounded-full" />
       </section>
 
       {/* Why Choose Us */}
       <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
-        <div className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <h2 className="font-display text-headline-lg text-primary mb-4">Commitment to Excellence</h2>
           <div className="w-20 h-1 bg-gold-accent mx-auto" />
-        </div>
-        <div className="grid md:grid-cols-3 gap-y-12 gap-x-gutter">
+        </AnimatedSection>
+        <StaggerGrid className="grid md:grid-cols-3 gap-y-12 gap-x-gutter" staggerDelay={0.1}>
           {features.map((f) => (
-            <div key={f.title} className="flex gap-6 group">
-              <div className="w-14 h-14 shrink-0 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-gold-accent group-hover:text-white transition-all duration-300">
-                <span className="material-symbols-outlined text-3xl">{f.icon}</span>
+            <StaggerItem key={f.title}>
+              <div className="flex gap-6 group">
+                <div className="w-14 h-14 shrink-0 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-gold-accent group-hover:text-white transition-all duration-300">
+                  <span className="material-symbols-outlined text-3xl">{f.icon}</span>
+                </div>
+                <div>
+                  <h3 className="font-subheading-md text-primary mb-2">{f.title}</h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed">{f.desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-subheading-md text-primary mb-2">{f.title}</h3>
-                <p className="text-on-surface-variant text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </section>
 
       {/* Process */}
       <section className="py-section-gap bg-surface-container-low">
         <div className="px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16">
+          <AnimatedSection className="mb-16">
             <h2 className="font-display text-headline-lg text-primary text-center">Our Export Process</h2>
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+          </AnimatedSection>
+          <StaggerGrid className="flex flex-col md:flex-row items-center justify-between gap-8 relative" staggerDelay={0.2}>
             <div className="absolute top-8 md:top-1/2 left-0 w-full h-px bg-outline-variant/30 hidden md:block -translate-y-1/2" />
             {[
               { n: 1, t: "Ethical Sourcing", d: "Procured directly from audited farms across India.", fill: true },
@@ -201,13 +239,13 @@ function HomePage() {
               { n: 3, t: "Premium Packing", d: "Secure, moisture-resistant industrial packaging.", fill: false },
               { n: 4, t: "Global Shipping", d: "Fast transit with real-time tracking updates.", fill: true },
             ].map((s) => (
-              <div key={s.n} className="relative z-10 flex flex-col items-center text-center max-w-[200px]">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold mb-4 shadow-lg ${s.fill ? "bg-primary text-white" : "bg-white border-2 border-primary text-primary"}`}>{s.n}</div>
+              <StaggerItem key={s.n} className="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold mb-4 shadow-lg transition-transform duration-500 hover:scale-110 ${s.fill ? "bg-primary text-white" : "bg-white border-2 border-primary text-primary"}`}>{s.n}</div>
                 <h4 className="font-subheading-md text-sm mb-2">{s.t}</h4>
                 <p className="text-xs text-on-surface-variant">{s.d}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 
@@ -217,7 +255,7 @@ function HomePage() {
           <img className="w-full h-full object-cover" alt="Shipping terminal at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmArGSodJ56ETdN5CS8VAc9a-CcBpbMWblIu1rcdFAsaa76ITaeAScy_YCWZ5mR9WbFyYA9AqkL3QhPiVpwhOkjQvPKtRQasdbhV7rS9Pw8buOfHpWsAMp9vqJ1WRkqMX6xt05PbyTnBB-DXHx3teBGiiscbLN2H-qVG1nmz7zeseC4Odm8W5vS3X3yqNXWwC2pdGJsNPz14F3CxI-N_W2Z_4mVpYBMPYnDjIiVbOEAx0cCwGAl9Uo9qkq64Tnxd2wjfNk8j4hmlI" />
           <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
         </div>
-        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center">
+        <AnimatedSection className="relative z-10 px-margin-desktop max-w-container-max mx-auto text-center">
           <h2 className="font-display text-4xl md:text-5xl text-white mb-8">Ready to Scale Your Sourcing?</h2>
           <p className="text-on-primary-container text-lg max-w-2xl mx-auto mb-12">
             Connect with our trade experts today to discuss custom requirements, bulk pricing, and international logistics solutions.
@@ -230,7 +268,7 @@ function HomePage() {
               Contact Sales
             </Link>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <SiteFooter />
