@@ -144,13 +144,12 @@
 @utility px-margin-desktop {
   padding-left: 64px;
   padding-right: 64px;
-}
-@media (max-width: 768px) {
-  @utility px-margin-desktop {
+  @media (max-width: 768px) {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
+
 
 /* Decorative textures */
 .grain-bg {
