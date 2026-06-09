@@ -89,10 +89,64 @@ function AboutPage() {
               <div className="mt-8">
                 <p className="font-subheading-md text-subheading-md text-on-primary">Omkar Nath Sharma</p>
                 <p className="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest mb-4">Founder & Managing Director</p>
+                <div className="w-48 h-12 flex items-center">
+                  <svg className="w-full h-full text-secondary-fixed fill-current opacity-80" viewBox="0 0 200 60">
+                    <path d="M10,40 Q30,10 50,40 T90,40 Q110,10 130,40 T170,40 Q190,10 200,40" fill="none" stroke="currentColor" strokeWidth="2" />
+                    <path d="M40,30 Q60,50 80,30" fill="none" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Supply Chain Ecosystem */}
+        <section className="py-section-gap bg-surface-container-low overflow-hidden">
+          <div className="px-margin-desktop max-w-container-max mx-auto">
+            <div className="grid md:grid-cols-2 gap-20 items-center">
+              <div>
+                <span className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-4">Our Network</span>
+                <h2 className="font-display text-headline-lg text-primary mb-8">Integrated Supply Ecosystem</h2>
+                <div className="space-y-12">
+                  {[
+                    { i: "agriculture", t: "Direct Farmer Sourcing", d: "We partner with over 5,000 farmers across Karnataka and Maharashtra, ensuring fair trade and heirloom quality." },
+                    { i: "verified", t: "Multi-Stage QC", d: "Rigorous testing at farm-gate, warehouse arrival, and pre-loading stages to guarantee 100% purity." },
+                    { i: "local_shipping", t: "Global Transit", d: "Strategic alliances with top-tier ocean and air freight carriers for seamless door-to-door delivery." },
+                  ].map((s) => (
+                    <div key={s.t} className="flex gap-6">
+                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-secondary-fixed">{s.i}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-subheading-md mb-2">{s.t}</h4>
+                        <p className="text-on-surface-variant">{s.d}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="aspect-square bg-white ambient-shadow rounded-full flex items-center justify-center p-12 relative">
+                  <div className="w-full h-full border-2 border-dashed border-outline-variant rounded-full relative animate-[spin_60s_linear_infinite]">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                      <span className="material-symbols-outlined text-white text-[16px]">public</span>
+                    </div>
+                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                      <span className="material-symbols-outlined text-white text-[16px]">inventory</span>
+                    </div>
+                  </div>
+                  <div className="absolute inset-20 border-2 border-dashed border-outline-variant rounded-full animate-[spin_40s_linear_infinite_reverse]" />
+                  <div className="absolute z-10 text-center px-8">
+                    <span className="font-display text-subheading-md text-primary font-bold">100% TRACEABLE</span>
+                    <p className="text-[10px] uppercase tracking-widest text-secondary font-bold mt-2">Seed to Shelf</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
 
         {/* Infrastructure */}
         <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
