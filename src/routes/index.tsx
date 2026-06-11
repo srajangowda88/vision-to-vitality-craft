@@ -19,10 +19,10 @@ export const Route = createFileRoute("/")({
 });
 
 const products = [
-  { name: "Dry Red Chilli", sub: "Guntur Variety, High Pungency", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMPE29l5yqB-MIAYhw5SbVY35qhmW8QXPuQSMvF-2ckTEhGp3vw0Xeqg-K1zYZT-_ihO-pewQTPt8JHXlfaLew11A_aYHWnhQB_2E6X4XaCjoP5YM8Gj1BRGxVt2DUkf5CilmcytKvGzWyDOUTXayRK-umkmzsPjBGTfttVFeQ2PCuEE19fioldVSxT6nwxUFdLhXVlC78EyG5N_tXo2X9mL98jfughSGpBvnBlz-wof1_UvqKrBMrcYo9hTGRg304yE_dZfcig3s" },
-  { name: "Fresh Onion", sub: "Nashik Pink & Red Onions", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAeAwZkAQnyp3ZYG15DuTXaYfaGwlEESFIvJMzT2fLTUEO7bqTwHRGvPiV0lqyqGXEOq5mK9exTj5Fvw5hxJ315mGK3zv8TLcx1UahDenHWif5PJaeinkWvXGa2EKP5h9KBDERtb5O7ClgQpY0Vn66UwBipkVyrJLvD_6q-3QHOGdd-XGNCnUfk_fZtRQH33zRk8MBt36AK-UskuwuCuAqHRmlvyOvOCJADnNwXJ11znQfTl5wNG4YJmcLlsLXd-nIfDqOqDzmK7U8" },
-  { name: "Ground Nuts", sub: "Hand Picked Selection (HPS)", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAr5omLERNZs06Lj7s2-yYYzMt5FPF6Sc2qewoUwzkdCYEQkwf12FaSLBYDZ1sbDxZFXJRGvYu-YkjlTQxvm9Ghgl05nonCmZh5QQLiHpkeas_zajSdPdftXC5S9ZjR472dgKCsLH8Wj2T_G2c30P83EC54Sct3v50xBd3CsKYy6uWGwSUQJiY3UaAD7XkTZb8EO9-vg9r2q8XiPngubCYcPEGwtLgZOPi-swRuHJPmOvjOcplECKbTmrTmoAKPCxu6KCdffbL486Y" },
-  { name: "Sugar", sub: "S30 & M30 Grade Refined", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKsJy-a5VkAzuJwsjnv6fcapsNgwOvBtRcHlAE1On3Hw2dBwcPm3g53ZbUwbq3zBKjfqDSo1vTj43w_ndSjy32dAiyuL6Pb1pkprqWZA1NONz6aLs12JQ7C2KoSlduczt21sXmQnyo4l-BuCRw7BSm6TTCA8u2Kudh-WkToMzw7TMahUhw1J9Cu-OgboFptl8wroS3OKemKmL3gYip8ylfoxOiNtxfttEvfdMRUz8QK8QS19NSFsRi_GgV5VcnG32hz4hxR6wfVHM" },
+  { name: "Dry Red Chilli", sub: "Guntur Variety, High Pungency", img: "Images-Videos/WhatsApp Image 2026-06-07 at 12.22.53 PM.jpeg" },
+  { name: "Fresh Onion", sub: "Nashik Pink & Red Onions", img: "Images-Videos/WhatsApp Image 2026-06-07 at 12.22.06 PM.jpeg" },
+  { name: "Ground Nuts", sub: "Hand Picked Selection (HPS)", img: "Images-Videos/Groundnut,_seeds.jpg" },
+  { name: "Sugar", sub: "S30 & M30 Grade Refined", img: "Images-Videos/sugar.png" },
 ];
 
 const features = [
@@ -68,7 +68,7 @@ function HomePage() {
           <img
             className="w-full h-full object-cover"
             alt="Cargo container ship at golden hour"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS-6yUMEtF2VWom20ER8YziTAgu8MlS2qSLy3owBDWD4lmHAOB2g-84_t2JmpH__-CwXYJrcz6SXdCVI_O2ryJAxUs1xvgreeGCmj7xLONpN0BAdonSQIGrXR_UJrcVaACcF05PyDvzpnf_YYLwFZHGtVWcznZinhFx9dcAOEGKpha72EcfmPgZsjGdQ3AIL3iLA1hrwo7RT_zadZNtaN3INCRu_OmB9fhWwYBAQx6hKJBU0zMUxK78SKccoOJEst0I31PFQeRMGw"
+            src="public/Images-Videos/hero-img.png"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>

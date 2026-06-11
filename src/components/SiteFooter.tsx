@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-on-primary w-full py-section-gap">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
         <div className="col-span-1">
           <div className="font-display text-subheading-md text-primary-fixed mb-6">OM EXPORTS</div>
           <p className="text-outline-variant text-sm leading-relaxed pr-8">
@@ -25,20 +25,6 @@ export function SiteFooter() {
             <li><a className="text-outline-variant hover:text-secondary-fixed transition-all" href="#">Certifications</a></li>
             <li><Link to="/contact" className="text-outline-variant hover:text-secondary-fixed transition-all">Contact Us</Link></li>
           </ul>
-        </div>
-        <div>
-          <h5 className="text-secondary-fixed font-bold mb-6">Newsletter</h5>
-          <p className="text-outline-variant text-sm mb-4">Subscribe to get latest market trends.</p>
-          <div className="flex">
-            <input
-              className="bg-primary-container border-none text-white text-sm focus:ring-1 focus:ring-secondary-fixed w-full px-4 rounded-l"
-              placeholder="Email Address"
-              type="email"
-            />
-            <button className="bg-secondary-fixed text-primary px-4 py-2 rounded-r hover:bg-white transition-all">
-              <span className="material-symbols-outlined">send</span>
-            </button>
-          </div>
         </div>
       </div>
       <div className="mt-20 pt-8 border-t border-white/10 px-margin-desktop max-w-container-max mx-auto text-center text-outline-variant text-xs">

@@ -7,7 +7,7 @@ import { AnimatedSection } from "@/components/animations/AnimatedSection";
 import { StaggerGrid, StaggerItem } from "@/components/animations/StaggerGrid";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
+  head: () => ({ 
     meta: [
       { title: "Contact Us | OM EXPORTS — Global Trade Desk" },
       { name: "description", content: "Get a custom quote from OM EXPORTS. Connect with our trade desk for bulk agricultural exports." },
@@ -108,14 +108,14 @@ function ContactPage() {
                 </AnimatedSection>
                 <AnimatedSection direction="right" delay={0.1}>
                   <Block icon="mail" title="Direct Correspondence">
-                    <p className="text-on-surface-variant">Exports: trade@omexports.com</p>
-                    <p className="text-on-surface-variant">Inquiries: info@omexports.com</p>
+                    <p className="text-on-surface-variant">Exports: omexports1964@gmail.com</p>
+                    <p className="text-on-surface-variant">Inquiries: omexports1964@gmail.com</p>
                   </Block>
                 </AnimatedSection>
                 <AnimatedSection direction="right" delay={0.2}>
                   <Block icon="call" title="Voice Support">
-                    <p className="text-on-surface-variant">+91 98765 43210 (Main Line)</p>
-                    <p className="text-on-surface-variant">+91 80 1234 5678 (Trade Desk)</p>
+                    <p className="text-on-surface-variant">+91 98809 32299</p>
+                    <p className="text-on-surface-variant text-sm mt-1">Direct line for trade inquiries</p>
                   </Block>
                 </AnimatedSection>
                 <AnimatedSection direction="right" delay={0.3}>
@@ -125,7 +125,7 @@ function ContactPage() {
                 </AnimatedSection>
                 <AnimatedSection direction="right" delay={0.4}>
                   <div className="pt-6 border-t border-outline-variant/30">
-                    <a className="inline-flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-all shadow-md group" href="#">
+                    <a className="inline-flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-all shadow-md group" href="https://wa.me/919880932299" target="_blank" rel="noopener noreferrer">
                       <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
                       <span className="font-button-text">Connect on WhatsApp</span>
                       <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -189,7 +189,7 @@ function ContactPage() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.5, type: "spring", stiffness: 200 }}
       >
-        <a className="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" href="#" aria-label="WhatsApp">
+        <a className="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" href="https://wa.me/919880932299" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
         </a>
       </motion.div>

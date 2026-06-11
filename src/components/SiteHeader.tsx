@@ -11,7 +11,12 @@ export function SiteHeader() {
   return (
     <header className="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20 shadow-sm">
       <nav className="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
-        <Link to="/" className="font-display text-subheading-md font-bold tracking-tighter text-primary uppercase">
+        <Link to="/" className="flex items-center gap-3 font-display text-subheading-md font-bold tracking-tighter text-primary uppercase">
+          <img 
+            src="/Images-Videos/Logo.png" 
+            alt="OM EXPORTS Logo" 
+            className="h-8 w-auto"
+          />
           OM EXPORTS
         </Link>
         <div className="hidden md:flex items-center gap-8">

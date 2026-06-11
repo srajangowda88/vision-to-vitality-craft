@@ -33,6 +33,10 @@ function ServicesPage() {
       <main className="pt-20">
         {/* Hero */}
         <section className="relative h-[614px] flex items-center overflow-hidden bg-primary-container">
+          <div className="absolute inset-0 z-0">
+            <img className="w-full h-full object-cover opacity-100" alt="Export solutions background" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.08 PM.jpeg" />
+            <div className="absolute inset-0 bg-primary-container/60" />
+          </div>
           <motion.div
             className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full"
             initial={{ opacity: 0, y: 40 }}
@@ -86,7 +90,7 @@ function ServicesPage() {
         {/* CTA */}
         <section className="py-section-gap bg-surface-container relative overflow-hidden">
           <div className="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
-            <img className="w-full h-full object-cover grayscale" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgMcmByT7QYg6Sx0R-SIWpEa2UcREbj0JLnSu6i9ZSkGCUqoC532r196ql9gLjD84h7ZcOqkJkNlo7McFLF5d6kfTTmbQOpkWVqJSmtvT1iUQPhpRlpnfeCjcKoVepob1QYsZ5C7CYC3JeUeQ6A1KP-I1BByJxQkgyutInYdMwK2ygcQSo9dDWz1t7R_dkZzetNG4VkX3bQqGGzM9y6h_6CEj1PUlXDQMcEjvOePr9gxZsbF-vrM2Ci98o08LSo-F1-5z-AxUo2x4" />
+            <img className="w-full h-full object-cover grayscale opacity-100" alt="" src="public/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.07 PM (1).jpeg" />
           </div>
           <AnimatedSection className="px-margin-desktop max-w-container-max mx-auto relative z-10">
             <div className="max-w-3xl">

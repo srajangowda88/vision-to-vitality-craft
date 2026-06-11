@@ -17,13 +17,6 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const timeline = [
-  { y: "1998", t: "Founding Roots", d: "OM EXPORTS established as a domestic trading house for Byadgi chillies in Karnataka." },
-  { y: "2005", t: "First International Venture", d: "Expansion into UAE and Middle Eastern markets with premium spice blends." },
-  { y: "2014", t: "Infrastructure Leap", d: "Inauguration of our flagship 50,000 sq. ft. automated warehouse and testing facility." },
-  { y: "2024", t: "Global Leadership", d: "Recognized as one of India's leading exporters to 40+ countries across EU, Americas, and SE Asia." },
-];
-
 function AboutPage() {
   return (
     <div className="bg-surface grainy-bg text-on-surface">
@@ -85,33 +78,6 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* Founder */}
-        <section className="bg-primary-container py-section-gap text-on-primary">
-          <div className="px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-12 gap-gutter items-center">
-            <AnimatedSection direction="left" className="md:col-span-5 mb-12 md:mb-0">
-              <div className="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                <img className="w-full h-full object-cover" alt="Founder portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC-ddSXHYpDoBWiMxgA831bIxx3MN06z8qjMNRdml7SXhHVMUze8PGqOoRMe0GqJVLzsZ7CPsUgc338u-jVVIU0sM7IUOsbMVTzIp7hm7EN89QldcnhhMZk3fWs2pZcG-JiHRanbYxqFvcMXZo1vHXNWrHGDbPDSZCaG9o5olhAct6OvJHIls7pk05UWM0wn9EUttuhuCQRtHbbfQS4i-99DnGSDh6R779zKr1E8ceVjzohwxq-_6dzXNGO5Zq19-9LbAs5pDa9mk" />
-              </div>
-            </AnimatedSection>
-            <AnimatedSection direction="right" delay={0.2} className="md:col-span-6 md:col-start-7">
-              <span className="material-symbols-outlined text-secondary-fixed text-6xl mb-8">format_quote</span>
-              <blockquote className="font-display text-headline-lg-mobile md:text-headline-lg mb-8 leading-tight italic text-primary-fixed">
-                "At OM EXPORTS, we believe that quality is not a standard to be met, but a promise to be kept. Every shipment carries our reputation and the legacy of Indian agriculture."
-              </blockquote>
-              <div className="mt-8">
-                <p className="font-subheading-md text-subheading-md text-on-primary">Omkar Nath Sharma</p>
-                <p className="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest mb-4">Founder & Managing Director</p>
-                <div className="w-48 h-12 flex items-center">
-                  <svg className="w-full h-full text-secondary-fixed fill-current opacity-80" viewBox="0 0 200 60">
-                    <path d="M10,40 Q30,10 50,40 T90,40 Q110,10 130,40 T170,40 Q190,10 200,40" fill="none" stroke="currentColor" strokeWidth="2" />
-                    <path d="M40,30 Q60,50 80,30" fill="none" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
         {/* Supply Chain Ecosystem */}
         <section className="py-section-gap bg-surface-container-low overflow-hidden">
           <div className="px-margin-desktop max-w-container-max mx-auto">
@@ -166,69 +132,37 @@ function AboutPage() {
           </AnimatedSection>
           <StaggerGrid className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.12}>
             <StaggerItem className="md:col-span-2 md:row-span-2 relative group overflow-hidden">
-              <img className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Smart warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC39g0LO6fnoXFNymSDSN9QYZ6YPlbLYsYkZjXSRwLPqh9GdTixfajbhRbM-r1MFGNTjY3oEijRWI8k2m1gakdGb3ntu2aWtp_yQTKm7wRL3zdYhYN58-xwGC5ULcvFHa-K69q5E5XUYK2ky_BYIZ-k63GkarVMUQqwZYwuXtNcmfAKJ-cgzFBqmTRjrfP241rQU02XoYf2lV36pDN_ogJIijAWzLA2vqLO1f2c0oE6N3pPANI5Wz_C_Hk_y6ipjPJbGcejLey0OhA" />
+              <img className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Smart warehouse" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.08 PM.jpeg" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <h4 className="font-subheading-md text-on-primary mb-2">Smart Warehousing</h4>
-                <p className="font-label-sm text-primary-fixed">Climate-controlled 50,000 sq. ft. facility with real-time inventory tracking.</p>
+                <p className="font-label-sm text-primary-fixed">Climate-controlled facility with real-time inventory tracking.</p>
               </div>
             </StaggerItem>
             <StaggerItem className="relative group overflow-hidden">
-              <img className="w-full h-[234px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Testing lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFHAfokSgq1gHzlgPSfm1DOajXR7ug2V97J0A8uNpv18UsZr6R7e2abzF5M8j2Ry7oza9JFqa0RZ_j7Nzm_IEOSKn19bZwAjv0Rdf8225E9y6G0m-9-PAYbQACyuFTC4uXICHGSoSSLIubMmStTNryLeRgbqoV0973VuVUUkQY1u1-epHeyLStp2j5_sm9XcHcgAD7Q8DTCdvAuxkPSDa9RAbtRlQfMGE8fDjQyzbfjGWltMY0WQZIgKsc1p-7QwA0exPBWvDoJAI" />
+              <img className="w-full h-[234px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Quality control" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.09 PM.jpeg" />
             </StaggerItem>
             <StaggerItem className="relative group overflow-hidden">
-              <img className="w-full h-[234px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Packaging line" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFlWjlrvWjMQPPN6Tve2ljpDcjM9olcasIDVZW_MAHMHijKteKSBs-WRoir7GFb0tE7MbJO7M-IuYwJc1SLP7oo7GI_PRX-ibN90hO3_F3ao1h0bJ-u5C5va15hpIQDwN6PSq7hvC2CgEVhIJAw2Qd-abPoNJnTcjGcXH4g7m90t0mQ_MepFwNNdMhw0MwtoqLVAO8KRLmELmdHuQLnsQ4edAwfc6eq05-Ne1ZnklEYJLKcQ_W7PmOpUT7rUS_qLwNWQde-iIIvVQ" />
+              <img className="w-full h-[234px] object-cover group-hover:scale-105 transition-transform duration-700" alt="Processing facility" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.25.37 PM.jpeg" />
             </StaggerItem>
           </StaggerGrid>
-        </section>
-
-        {/* Timeline */}
-        <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto">
-          <AnimatedSection className="text-center mb-24">
-            <span className="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-4">Our Evolution</span>
-            <h2 className="font-display text-headline-lg text-primary">The Growth Journey</h2>
+          
+          {/* Additional Images */}
+          <AnimatedSection delay={0.3} className="mt-16">
+            <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-6" staggerDelay={0.1}>
+              <StaggerItem className="relative group overflow-hidden">
+                <img className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-700" alt="Export operations" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.06 PM.jpeg" />
+              </StaggerItem>
+              <StaggerItem className="relative group overflow-hidden">
+                <img className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-700" alt="Agricultural products" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.07 PM.jpeg" />
+              </StaggerItem>
+              <StaggerItem className="relative group overflow-hidden">
+                <img className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-700" alt="Team operations" src="/Images-Videos/WhatsApp Image 2026-06-07 at 12.25.38 PM.jpeg" />
+              </StaggerItem>
+              <StaggerItem className="relative group overflow-hidden">
+                <img className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-700" alt="Quality processes" src="public/Images-Videos/WhatsApp Image 2026-06-07 at 12.22.08 PM (1).jpeg" />
+              </StaggerItem>
+            </StaggerGrid>
           </AnimatedSection>
-          <div className="relative">
-            <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full timeline-line opacity-20 hidden md:block" />
-            <div className="space-y-24">
-              {timeline.map((e, i) => {
-                const right = i % 2 === 1;
-                return (
-                  <motion.div
-                    key={e.y}
-                    className="relative flex items-center group"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                  >
-                    <div className={`md:w-1/2 ${right ? "md:pr-16 md:text-right md:order-1" : "md:pr-16 text-right hidden md:block"}`}>
-                      {right ? (
-                        <>
-                          <div className="md:hidden font-display text-headline-lg text-secondary mb-2">{e.y}</div>
-                          <h4 className="font-subheading-md text-subheading-md mb-2">{e.t}</h4>
-                          <p className="text-on-surface-variant">{e.d}</p>
-                        </>
-                      ) : (
-                        <span className="font-display text-headline-lg text-outline-variant group-hover:text-secondary transition-colors duration-500">{e.y}</span>
-                      )}
-                    </div>
-                    <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary z-10 hidden md:block group-hover:scale-125 transition-transform duration-300" />
-                    <div className={`md:w-1/2 md:pl-16 ${right ? "hidden md:block md:order-2" : ""}`}>
-                      {right ? (
-                        <span className="font-display text-headline-lg text-outline-variant group-hover:text-secondary transition-colors duration-500">{e.y}</span>
-                      ) : (
-                        <>
-                          <div className="md:hidden font-display text-headline-lg text-secondary mb-2">{e.y}</div>
-                          <h4 className="font-subheading-md text-subheading-md mb-2">{e.t}</h4>
-                          <p className="text-on-surface-variant">{e.d}</p>
-                        </>
-                      )}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
         </section>
 
         {/* CTA */}
@@ -238,9 +172,9 @@ function AboutPage() {
             <Link to="/contact" className="bg-primary text-on-primary px-12 py-5 font-button-text hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
               Get in Touch
             </Link>
-            <button className="border border-primary text-primary px-12 py-5 font-button-text hover:bg-primary hover:text-white transition-all duration-300">
+            {/* <button className="border border-primary text-primary px-12 py-5 font-button-text hover:bg-primary hover:text-white transition-all duration-300">
               Download Corporate Brochure
-            </button>
+            </button> */}
           </div>
         </AnimatedSection>
       </main>
