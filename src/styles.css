@@ -1,42 +1,46 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 /* ===== OM EXPORTS Design System ===== */
 
-@layer base {
-  :root {
-    /* Colors */
-    --background: #fcf9f8;
-    --foreground: #1c1b1b;
-    --primary: #000615;
-    --primary-foreground: #ffffff;
-    --secondary: #7d5700;
-    --secondary-foreground: #ffffff;
-    --muted: #f0eded;
-    --muted-foreground: #44474d;
-    --accent: #ffc55f;
-    --accent-foreground: #271900;
-    --destructive: #ba1a1a;
-    --destructive-foreground: #ffffff;
-    --border: #c4c6ce;
-    --input: #c4c6ce;
-    --ring: #7d5700;
-    --radius: 0.5rem;
-  }
+/* Tailwind v4 theme tokens - maps CSS vars to utility classes */
+@theme {
+  --color-background: #fcf9f8;
+  --color-foreground: #1c1b1b;
+  --color-primary: #000615;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #7d5700;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #f0eded;
+  --color-muted-foreground: #44474d;
+  --color-accent: #ffc55f;
+  --color-accent-foreground: #271900;
+  --color-destructive: #ba1a1a;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #c4c6ce;
+  --color-input: #c4c6ce;
+  --color-ring: #7d5700;
 
+  --radius: 0.5rem;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-subheading: 'Manrope', sans-serif;
+}
+
+@layer base {
   * {
-    @apply border-border;
+    border-color: var(--color-border);
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: "Inter", system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--font-display);
   }
 }
 
